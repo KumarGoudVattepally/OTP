@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <div>
+      <center>
+        <form id="form" onsubmit="evaluation(event)">
+          <input type="text" id="text" /><br /><br />
+          <input type="button" value="Show OTP" id="otp" onclick="ran()" />
+        </form>
+      </center>
+    </div>
+    <script>
+      let form = document.getElementById("form");
+      let text = document.getElementById("text");
+          const  evaluation =(event)=>{
+      event.preventDefault();
+      let res= evaluation(text.value)
+         text.value=res
+          }
+      let a;
+      let c;
+      function ran() {
+        a = Math.trunc(Math.random() * 9999 + 10000);
+        text.value = a;
+        function randomcolour(){
+            let num="12345ARGGV"
+            let kum="#"
+            for( let i=0;i<6;i++)
+            kum+=num[Math.floor(Math.random()*16)]
+        return kum
+        }
+        function bg(){
+            document.body.style.backgroundColor=randomcolour()
+             text.value=randomcolour()
+        }
+
+
+      }
+      document.getElementById("otp")
+    </script>
+  </body>
+</html>
